@@ -11,11 +11,13 @@ db2 = sys.argv[6]
 username2 = sys.argv[7]
 password2 = sys.argv[8]
 
+model_name = sys.argv[9]
+
 object1 = OdooObject(url1, db1, username1, password1)
 object2 = OdooObject(url2, db2, username2, password2)
 
-partner1_fields = object1.fields_get('res.partner')
-partner2_fields = object2.fields_get('res.partner')
+partner1_fields = object1.fields_get(model_name)
+partner2_fields = object2.fields_get(model_name)
 
 partner1_fields_set = set(partner1_fields.keys())
 partner2_fields_set = set(partner2_fields.keys())
