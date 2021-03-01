@@ -29,7 +29,7 @@ class OdooObject:
 		return res
 
 	def search_read(self, model_name, domain=[], fields_name=None):
-		print('Fields of model %s:' %model_name)
+		print('Search read of model %s with domain %s:' %(model_name, str(domain)))
 		print('=========================================================================')
 		res = self.models.execute_kw(self.db, self.uid, self.password,
 		    model_name, 'search_read', [domain, fields_name])
