@@ -28,11 +28,14 @@ class OdooObject:
 		    model_name, 'fields_get', [])
 		return res
 
-	def search_read(self, model_name, domain=[], fields_name=None):
+	def search_read(self, model_name, domain=[], fields_name=['id']):
 		print('Search read of model %s with domain %s:' %(model_name, str(domain)))
 		print('=========================================================================')
+		args = [domain]
+		if fields_name:
+			args.append(fields_name)
 		res = self.models.execute_kw(self.db, self.uid, self.password,
-		    model_name, 'search_read', [domain, fields_name])
+		    model_name, 'search_read', args)
 		return res
 
 	def call(self, model_name='res.partner', function_name='search', args=[]):
