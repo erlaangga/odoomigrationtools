@@ -59,6 +59,9 @@ with open('custom.models.csv', mode='w') as employee_file:
 # give a break after default fields
 # list of custom fields
 
+# with open('custom.models.csv', mode='w') as employee_file:
+#     employee_writer = csv.writer(employee_file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL, lineterminator='\n')
+
 # csv column format
 # no, field name, type, relation
 # if field is not many2one, leave it blank
