@@ -90,12 +90,12 @@ for model_name in models_intersection:
         fields_difference = set(fields2.keys()).difference(fields1.keys())
         model_writer.writerow(['no', 'field', 'type', 'relation', 'string'])
         for field in fields_intersection:
-            field_attr = fields[field]
+            field_attr = fields2[field]
             model_writer.writerow([no, field, field_attr['type'],field_attr.get('relation', ''), field_attr['string'].encode('utf-8')])
             no+=1
         model_writer.writerow(['', '', '', '', ''])
         for field in fields_difference:
-            field_attr = fields[field]
+            field_attr = fields2[field]
             model_writer.writerow([no, field, field_attr['type'],field_attr.get('relation', ''), field_attr['string'].encode('utf-8')])
             no+=1
         model_writer.writerow(['', '', '', '', ''])
